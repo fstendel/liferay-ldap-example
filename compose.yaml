@@ -9,8 +9,8 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ${PWD}/portal-ext.properties:/opt/liferay/portal-ext.properties
-      - ${PWD}/com.liferay.portal.security.ldap.configuration.LDAPServerConfiguration~example.config:/opt/liferay/osgi/configs/com.liferay.portal.security.ldap.configuration.LDAPServerConfiguration~example.config
+      - ./liferayCE/portal-ext.properties:/opt/liferay/portal-ext.properties
+      - ./liferayCE/osgi/configs:/opt/liferay/osgi/configs
     networks:
       liferay-ldap-network:
         aliases:

@@ -1,6 +1,6 @@
 # Key learnings
 
-The current Liferay versions (7.x) seem to be a giant sh*thole or at least a work-in-progress in some regards.
+The current Liferay versions (7.x) seem to be a mediocre sh*thole or at least a work-in-progress in some regards.
 This page is about some of the odd stuff I faced while working on this example.
 
 
@@ -25,6 +25,11 @@ Or maybe I wasn't just able to find the proper documentation yet...
 _Edit 2022-11-19 1_: Ok, it seems one can export something at the top level of instance scope. Something means: Not everything I changed. Well
 at least I was able to export the LDAP instance scope configs for now (still need to find a way to fill the password field in the confs tho).
 
+_Edit 2022-11-20 1_: Found a way to add the passwords to the config files. Not the best way yet, but we are getting there. 
+The configuration file for the general LDAP export settings still doesn't work yet (the instance scope LDAPServer config works...).
+
+_Edit 2022-11-20 2_: Ok, I found the problem with the general LDAP export settings. The config file was missing the identifier (demarked by using ~<identifier>)
+the LDAPServer had. Rechecked if I did something wrong, but it seems exporting the settings via UI omits an idenfitier for the import/export config file).
 
 ### LDAP Server Configuration
 
