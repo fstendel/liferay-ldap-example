@@ -10,6 +10,17 @@ The LiferayDXP instance acts as a (write) primary while the LiferayCE instance w
 
 (Image follows)
 
+# How it is achieved?
+
+An OpenLdap container and a LiferayDXP container are spun up in docker-compose network.
+The LiferayDXP container is configured via Liferay osgi-config files (Apache Felix notation IIRC) 
+mounted into the container, pointing to the LDAP DN within the OpenLDAP container containing the users.  
+
+# Usage
+
+compose.yaml currently contains a simple setup with only one liferay container (for systems with less then 10 GB of RAM available)
+
+(compose-full.yaml with the full setup for systems with more then 10 GB of RAM will follow soon)
 
 # Lessons Learned
 

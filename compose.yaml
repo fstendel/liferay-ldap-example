@@ -5,12 +5,12 @@ networks:
 
 services:
   liferay:
-    image: "liferay/portal"
+    image: "liferay/dxp"
     ports:
       - 8080:8080
     volumes:
-      - ./liferayCE/portal-ext.properties:/opt/liferay/portal-ext.properties
-      - ./liferayCE/osgi/configs:/opt/liferay/osgi/configs
+      - ./liferayDXP/portal-ext.properties:/opt/liferay/portal-ext.properties
+      - ./liferayDXP/osgi/configs:/opt/liferay/osgi/configs
     networks:
       liferay-ldap-network:
         aliases:
