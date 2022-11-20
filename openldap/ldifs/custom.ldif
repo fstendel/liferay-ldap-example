@@ -1,0 +1,3 @@
+dn: ou=liferay-users,dc=liferay,dc=ldap,dc=example,dc=org
+ou: liferay-users
+objectClass: organizationalUnit

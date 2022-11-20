@@ -14,7 +14,13 @@ The LiferayDXP instance acts as a (write) primary while the LiferayCE instance w
 
 An OpenLdap container and a LiferayDXP container are spun up in docker-compose network.
 The LiferayDXP container is configured via Liferay osgi-config files (Apache Felix notation IIRC) 
-mounted into the container, pointing to the LDAP DN within the OpenLDAP container containing the users.  
+mounted into the container, pointing to the LDAP DN within the OpenLDAP container where the users should be synced to.
+
+
+# Current WIP:
+Running something like "ldapadd -H ldap://localhost:1389 -D cn=admin,dc=liferay,dc=ldap,dc=example,dc=org -w adminpassword" 
+with the DN infos passed via STDIN after OpenLDAP container startup will be too hacky. 
+So I'll setup a more complex directory structure via a LDIF file provided to the OpenLDAP container. 
 
 # Usage
 
