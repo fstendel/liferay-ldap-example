@@ -18,7 +18,7 @@ mounted into the container, pointing to the LDAP DN within the OpenLDAP containe
 
 
 # Current WIP:
-Running something like "ldapadd -H ldap://localhost:1389 -D cn=admin,dc=liferay,dc=ldap,dc=example,dc=org -w adminpassword" 
+Running something like _ldapadd -H ldap://localhost:1389 -D cn=admin,dc=liferay,dc=ldap,dc=example,dc=org -w adminpassword_
 with the DN infos passed via STDIN after OpenLDAP container startup will be too hacky. 
 So I'll setup a more complex directory structure via a LDIF file provided to the OpenLDAP container. 
 
