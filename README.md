@@ -26,7 +26,7 @@ So I'll setup a more complex directory structure via a LDIF file provided to the
 
 compose.yaml currently contains a simple setup with only one liferay container (for systems with less then 10 GB of RAM available)
 
-(compose-full.yaml with the full setup for systems with more then 10 GB of RAM will follow soon)
+compose-full.yaml contains the full setup for systems with more then 10 GB of RAM available, which can be started by _docker-compose -f compose-full.yaml up_.
 
 # Lessons Learned
 
