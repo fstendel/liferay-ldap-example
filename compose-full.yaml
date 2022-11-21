@@ -1,0 +1,41 @@
+version: "3.9"
+
+networks:
+  liferay-ldap-network:
+
+services:
+  liferayDXP:
+    image: "liferay/dxp"
+    ports:
+      - 8080:8080
+    volumes:
+      - ./liferayDXP/portal-ext.properties:/opt/liferay/portal-ext.properties
+      - ./liferayDXP/osgi/configs:/opt/liferay/osgi/configs
+    networks:
+      liferay-ldap-network:
+        aliases:
+          - liferay.compose-network.local
+
+  openldap:
+    image: "bitnami/openldap"
+    ports:
+      - 1389:1389
+      - 1636:1636
+    environment:
+      - LDAP_ROOT=dc=liferay,dc=ldap,dc=example,dc=org
+    networks:
+      liferay-ldap-network:
+        aliases:
+          - ldap.compose-network.local
+
+  liferayCE:
+    image: "liferay/portal"
+    ports:
+      - 8181:8080
+    volumes:
+      - ./liferayDXP/portal-ext.properties:/opt/liferay/portal-ext.properties
+      - ./liferayDXP/osgi/configs:/opt/liferay/osgi/configs
+    networks:
+      liferay-ldap-network:
+        aliases:
+          - liferay.compose-network.local
