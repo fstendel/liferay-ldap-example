@@ -33,8 +33,8 @@ services:
     ports:
       - 8181:8080
     volumes:
-      - ./liferayDXP/portal-ext.properties:/opt/liferay/portal-ext.properties
-      - ./liferayDXP/osgi/configs:/opt/liferay/osgi/configs
+      - ./liferayCE/portal-ext.properties:/opt/liferay/portal-ext.properties
+      - ./liferayCE/osgi/configs:/opt/liferay/osgi/configs
     networks:
       liferay-ldap-network:
         aliases:

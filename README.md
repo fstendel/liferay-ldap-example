@@ -24,9 +24,17 @@ So I'll setup a more complex directory structure via a LDIF file provided to the
 
 # Usage
 
-compose.yaml currently contains a simple setup with only one liferay container (for systems with less then 10 GB of RAM available)
+Run _docker-compose up_ to run the stripped down compose.yaml which currently contains a simple setup with only one liferay container (for systems with less then 10 GB of RAM available)
 
-compose-full.yaml contains the full setup for systems with more then 10 GB of RAM available, which can be started by _docker-compose -f compose-full.yaml up_.
+Run _docker-compose -f compose-full.yaml up_ to run the full setup on systems with more then 10 GB of RAM available.
+
+The main Liferay will be available under _http://localhost:8080_. 
+You can than login using _Test/test_ as credentials.
+
+If you add an user using the admin control panel this will be exported to the running OpenLdap container from
+where it is fetched by the 2nd Liferay on regular intervals.
+
+The 2nd Liferay will be available under _http://localhost:8181_ and will be using the same credentials as the main liferay.
 
 # Lessons Learned
 
